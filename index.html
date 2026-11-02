@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio profesional de soporte IT, redes y ciberseguridad.">
+  <title>Portfolio IT | Mi perfil profesional</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #263449;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 55px 25px;
+    }
+
+    section {
+      margin-bottom: 65px;
+    }
+
+    .hero {
+      padding: 55px 0;
+    }
+
+    .hero small {
+      color: #38bdf8;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 55px);
+      margin: 15px 0;
+      line-height: 1.2;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+
+    p {
+      color: #b8c4d6;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 19px;
+      color: #94a3b8;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #2563eb;
+      color: #7dd3fc;
+      border-radius: 20px;
+      padding: 5px 12px;
+      margin: 12px 5px 0 0;
+      font-size: 13px;
+    }
+
+    .card {
+      background: #131f33;
+      border: 1px solid #263449;
+      border-radius: 12px;
+      padding: 22px;
+      margin: 15px 0;
+    }
+
+    .card h3 {
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+
+    .card a, .contact a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .card a:hover, .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid #263449;
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">PORTFOLIO IT</div>
+    <nav>
+      <a href="#perfil">Perfil</a>
+      <a href="#conocimientos">Conocimientos</a>
+      <a href="#formacion">Formación</a>
+      <a href="#practicas">Prácticas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="perfil">
+      <small>PORTFOLIO PROFESIONAL</small>
+      <h1>Mi nombre y apellido</h1>
+      <p class="subtitle">Soporte IT | Redes | Ciberseguridad</p>
+
+      <span class="tag">Windows</span>
+      <span class="tag">Redes</span>
+      <span class="tag">Cisco</span>
+      <span class="tag">Soporte técnico</span>
+
+      <br><br>
+
+      <p>
+        Estudiante de redes y ciberseguridad, orientado al desarrollo
+        profesional en soporte técnico, infraestructura y operaciones IT.
+      </p>
+      <p>
+        Cuento con conocimientos básicos de instalación de sistemas
+        operativos, herramientas informáticas y fundamentos de redes.
+        Me interesa adquirir experiencia práctica y continuar aprendiendo.
+      </p>
+    </section>
+
+    <section id="conocimientos">
+      <h2>Conocimientos técnicos</h2>
+
+      <div class="card">
+        <h3>Sistemas operativos</h3>
+        <p>Instalación básica de Windows y Linux, instalación de programas
+        y configuración inicial.</p>
+      </div>
+
+      <div class="card">
+        <h3>Redes informáticas</h3>
+        <p>Fundamentos de redes, direccionamiento IP, comandos básicos
+        de conectividad y prácticas iniciales con Cisco Packet Tracer.</p>
+      </div>
+
+      <div class="card">
+        <h3>Herramientas</h3>
+        <p>Wireshark (uso inicial), Packet Tracer y herramientas
+        informáticas de uso general.</p>
+      </div>
+
+      <div class="card">
+        <h3>Documentación</h3>
+        <p>Elaboración de manuales, digitalización de información,
+        registros de tareas y documentación de procedimientos.</p>
+      </div>
+    </section>
+
+    <section id="formacion">
+      <h2>Formación y certificaciones</h2>
+
+      <div class="card">
+        <h3>Cisco Networking Academy</h3>
+        <p>Conceptos Básicos de Redes</p>
+        <p>Estado: Completado.</p>
+        <a href="#" target="_blank">Ver insignia o certificado</a>
+      </div>
+
+      <div class="card">
+        <h3>Cisco Networking Academy</h3>
+        <p>Dispositivos de Red y Configuración Inicial</p>
+        <p>Estado: En curso.</p>
+      </div>
+
+      <div class="card">
+        <h3>Licenciatura en Ciberdefensa – UNDEF</h3>
+        <p>Preparación académica de ingreso.</p>
+      </div>
+    </section>
+
+    <section id="practicas">
+      <h2>Prácticas y proyectos</h2>
+
+      <div class="card">
+        <h3>Prácticas de soporte técnico</h3>
+        <p>Espacio destinado a documentar instalaciones,
+        diagnósticos y resolución de problemas informáticos.</p>
+        <p>Estado: En desarrollo.</p>
+      </div>
+
+      <div class="card">
+        <h3>Laboratorios de redes</h3>
+        <p>Espacio para registrar ejercicios de Cisco Packet Tracer,
+        análisis con Wireshark y pruebas de conectividad.</p>
+        <p>Estado: En desarrollo.</p>
+      </div>
+    </section>
+
+    <section id="idiomas">
+      <h2>Idiomas</h2>
+      <div class="card">
+        <h3>Inglés</h3>
+        <p>Nivel básico: lectura y comprensión de instrucciones
+        técnicas sencillas y vocabulario informático.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Contacto y perfiles profesionales</h2>
+      <p>Correo: agregar correo de contacto</p>
+      <p>LinkedIn: <a href="#" target="_blank">Agregar perfil</a></p>
+      <p>GitHub: <a href="https://github.com/ematal210685-creator" target="_blank">Mi cuenta de GitHub</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    Portfolio profesional · Buenos Aires, Argentina
+  </footer>
+
+</body>
+</html>
