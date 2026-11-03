@@ -1,276 +1,372 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio profesional de soporte IT, redes y ciberseguridad.">
-  <title>Portfolio IT | Mi perfil profesional</title>
-
+  <meta name="description" content="Portfolio profesional de Emanuel Francisco Villagra: experiencia técnico-operativa, comunicaciones, soporte IT, redes y proyectos tecnológicos.">
+  <meta name="theme-color" content="#0b1220">
+  <title>SER@PHANDEV | Emanuel Francisco Villagra</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #0b1220;
+      --surface: #111c2e;
+      --surface-2: #16243a;
+      --text: #e8eef7;
+      --muted: #a8b5c8;
+      --accent: #55bde8;
+      --accent-soft: rgba(85, 189, 232, .12);
+      --line: #26364d;
+      --max: 1120px;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #e5e7eb;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
-
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
     header {
-      padding: 22px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #263449;
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11, 18, 32, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
-
-    .logo {
-      color: #38bdf8;
-      font-weight: bold;
-      font-size: 20px;
+    .nav {
+      min-height: 72px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
     }
-
-    nav a {
-      color: #cbd5e1;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 55px 25px;
-    }
-
-    section {
-      margin-bottom: 65px;
-    }
-
-    .hero {
-      padding: 55px 0;
-    }
-
-    .hero small {
-      color: #38bdf8;
-      letter-spacing: 2px;
-    }
-
-    h1 {
-      font-size: clamp(34px, 6vw, 55px);
-      margin: 15px 0;
-      line-height: 1.2;
-    }
-
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 20px;
-      font-size: 25px;
-    }
-
-    p {
-      color: #b8c4d6;
-      margin-bottom: 15px;
-    }
-
-    .subtitle {
-      font-size: 19px;
-      color: #94a3b8;
-    }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid #2563eb;
-      color: #7dd3fc;
-      border-radius: 20px;
-      padding: 5px 12px;
-      margin: 12px 5px 0 0;
-      font-size: 13px;
-    }
-
+    .brand { color: var(--text); font-weight: 800; letter-spacing: .8px; font-size: 1.08rem; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 20px; }
+    nav a { color: var(--muted); font-size: .92rem; }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+    .hero { padding: 94px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: center; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 2.4px; font-size: .78rem; font-weight: 700; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.08; margin: 14px 0 16px; letter-spacing: -1.5px; }
+    .role { font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--muted); margin-bottom: 22px; }
+    .intro { max-width: 790px; color: #c7d2e1; font-size: 1.03rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 26px; }
+    .tag { border: 1px solid #36516c; color: #bfe8f8; background: var(--accent-soft); border-radius: 999px; padding: 5px 12px; font-size: .82rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button { display: inline-block; padding: 10px 17px; border-radius: 8px; border: 1px solid #47718f; color: var(--text); font-weight: 600; }
+    .button.primary { background: #173b54; border-color: #397da2; }
+    .button:hover { text-decoration: none; background: #1b3048; }
+    section { padding: 62px 0; border-top: 1px solid rgba(38, 54, 77, .72); }
+    .section-kicker { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: .72rem; font-weight: 700; }
+    h2 { font-size: clamp(1.65rem, 3vw, 2.15rem); margin: 5px 0 24px; }
+    h3 { font-size: 1.08rem; margin-bottom: 8px; color: #f2f6fb; }
+    p { color: #c3cede; margin: 0 0 13px; }
+    .lead { max-width: 850px; font-size: 1.04rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
     .card {
-      background: #131f33;
-      border: 1px solid #263449;
-      border-radius: 12px;
-      padding: 22px;
-      margin: 15px 0;
+      background: linear-gradient(145deg, var(--surface), #101a2b);
+      border: 1px solid var(--line); border-radius: 13px; padding: 22px;
+      min-width: 0;
     }
-
-    .card h3 {
-      color: #f1f5f9;
-      margin-bottom: 8px;
+    .card p:last-child { margin-bottom: 0; }
+    .meta { color: var(--accent); font-size: .82rem; font-weight: 650; margin-bottom: 8px; }
+    .status { display: inline-block; margin-top: 8px; padding: 3px 9px; border-radius: 999px; font-size: .75rem; border: 1px solid #43566e; color: #c4d2e3; }
+    .status.done { border-color: #356c60; color: #a9dfce; }
+    .status.progress { border-color: #826b3e; color: #e8d3a1; }
+    ul { padding-left: 19px; color: #c3cede; }
+    li { margin: 5px 0; }
+    .timeline { display: grid; gap: 16px; }
+    .project-number { color: var(--accent); font-size: .78rem; letter-spacing: 1.5px; font-weight: 800; }
+    .project-card { display: flex; flex-direction: column; }
+    .project-card .bottom { margin-top: auto; padding-top: 12px; }
+    .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
+    .contact-list { display: grid; gap: 10px; }
+    .contact-item { padding: 12px 14px; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--line); }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: #8796aa; font-size: .85rem; text-align: center; }
+    .note { font-size: .88rem; color: #91a2b8; }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; gap: 12px; }
+      nav { gap: 10px 16px; }
+      .hero { padding: 65px 0 55px; }
+      .grid, .two-col { grid-template-columns: 1fr; }
+      section { padding: 48px 0; }
     }
-
-    .card a, .contact a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    .card a:hover, .contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      border-top: 1px solid #263449;
-      text-align: center;
-      padding: 25px;
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    @media (max-width: 650px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav a {
-        margin: 0 7px;
-      }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero .eyebrow, .hero h1, .hero .role, .hero .intro { animation: appear .65s ease both; }
+      .hero h1 { animation-delay: .08s; }
+      .hero .role { animation-delay: .14s; }
+      .hero .intro { animation-delay: .2s; }
+      @keyframes appear { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <div class="logo">PORTFOLIO IT</div>
-    <nav>
-      <a href="#perfil">Perfil</a>
-      <a href="#conocimientos">Conocimientos</a>
-      <a href="#formacion">Formación</a>
-      <a href="#practicas">Prácticas</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="container nav">
+      <a class="brand" href="#inicio">SER<span>@</span>PHANDEV</a>
+      <nav aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#conocimientos">Conocimientos</a>
+        <a href="#formacion">Formación</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#casos">Casos técnicos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <section class="hero" id="inicio" style="border-top:0">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Portfolio profesional · Desarrollo tecnológico</div>
+          <h1>Emanuel Francisco Villagra</h1>
+          <div class="role">Experiencia técnico-operativa · Comunicaciones · Formación en IT y redes</div>
+          <div class="tags">
+            <span class="tag">Soporte IT en formación</span>
+            <span class="tag">Redes</span>
+            <span class="tag">Documentación técnica</span>
+            <span class="tag">Comunicaciones</span>
+          </div>
+          <p class="intro">Experiencia en tareas técnico-operativas, mantenimiento y control de equipos, relevamiento de infraestructura, documentación y organización de procesos. Actualmente amplío mis conocimientos en redes informáticas, soporte tecnológico, programación y ciberseguridad mediante formación y proyectos propios.</p>
+          <div class="actions">
+            <a class="button primary" href="#proyectos">Ver proyectos</a>
+            <a class="button" href="https://github.com/ematal210685-creator" target="_blank" rel="noopener">Mi GitHub</a>
+            <a class="button" href="mailto:ematal210685@gmail.com">Contactarme</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section class="hero" id="perfil">
-      <small>PORTFOLIO PROFESIONAL</small>
-      <h1>Mi nombre y apellido</h1>
-      <p class="subtitle">Soporte IT | Redes | Ciberseguridad</p>
+    <section id="sobre-mi">
+      <div class="container">
+        <div class="section-kicker">Perfil</div>
+        <h2>Sobre mí</h2>
+        <p class="lead">Soy Emanuel Francisco Villagra, profesional con experiencia en tareas técnico-operativas, sistemas electrónicos y comunicaciones, mantenimiento de equipos, relevamiento de infraestructura y documentación técnica.</p>
+        <p>A lo largo de mi trayectoria desarrollé experiencia en la organización de procesos, identificación de problemas, elaboración de procedimientos y propuestas de mejora orientadas a optimizar el funcionamiento de los sistemas y las tareas operativas.</p>
+        <p>Actualmente estoy orientando mi desarrollo profesional hacia el ámbito tecnológico, ampliando mis conocimientos en redes informáticas, infraestructura IT, soporte técnico, ciberseguridad y programación mediante formación y proyectos propios.</p>
+        <p>Mi objetivo es combinar la experiencia práctica adquirida durante mi trayectoria laboral con nuevas competencias tecnológicas, desarrollando soluciones y proyectos que permitan demostrar mis conocimientos y capacidades.</p>
+      </div>
+    </section>
 
-      <span class="tag">Windows</span>
-      <span class="tag">Redes</span>
-      <span class="tag">Cisco</span>
-      <span class="tag">Soporte técnico</span>
-
-      <br><br>
-
-      <p>
-        Estudiante de redes y ciberseguridad, orientado al desarrollo
-        profesional en soporte técnico, infraestructura y operaciones IT.
-      </p>
-      <p>
-        Cuento con conocimientos básicos de instalación de sistemas
-        operativos, herramientas informáticas y fundamentos de redes.
-        Me interesa adquirir experiencia práctica y continuar aprendiendo.
-      </p>
+    <section id="experiencia">
+      <div class="container">
+        <div class="section-kicker">Trayectoria</div>
+        <h2>Experiencia profesional</h2>
+        <div class="timeline">
+          <article class="card">
+            <div class="meta">Abril 2010 – Actualidad</div>
+            <h3>Auxiliar técnico — Oficina de Comunicaciones</h3>
+            <p><strong>Servicio Penitenciario Federal (CPF I)</strong></p>
+            <ul>
+              <li>Mantenimiento y control de equipos y sistemas de comunicaciones.</li>
+              <li>Relevamiento y registro de conexiones y líneas telefónicas.</li>
+              <li>Identificación de problemas en instalaciones y componentes.</li>
+              <li>Organización y actualización de inventarios de equipos, repuestos y herramientas.</li>
+              <li>Elaboración de documentación técnica, procedimientos y manuales de apoyo.</li>
+              <li>Organización de registros para facilitar el seguimiento de tareas entre guardias.</li>
+              <li>Elaboración de propuestas de mejora a partir de problemas detectados.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="meta">Enero 2007 – Enero 2010</div>
+            <h3>Operador de RX / Operador de rampa</h3>
+            <p><strong>H.A.S. — Seguridad aeroportuaria</strong></p>
+            <ul>
+              <li>Operación de equipos de detección por rayos X.</li>
+              <li>Desempeño de tareas operativas de seguridad aeroportuaria y rampa.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="conocimientos">
-      <h2>Conocimientos técnicos</h2>
-
-      <div class="card">
-        <h3>Sistemas operativos</h3>
-        <p>Instalación básica de Windows y Linux, instalación de programas
-        y configuración inicial.</p>
-      </div>
-
-      <div class="card">
-        <h3>Redes informáticas</h3>
-        <p>Fundamentos de redes, direccionamiento IP, comandos básicos
-        de conectividad y prácticas iniciales con Cisco Packet Tracer.</p>
-      </div>
-
-      <div class="card">
-        <h3>Herramientas</h3>
-        <p>Wireshark (uso inicial), Packet Tracer y herramientas
-        informáticas de uso general.</p>
-      </div>
-
-      <div class="card">
-        <h3>Documentación</h3>
-        <p>Elaboración de manuales, digitalización de información,
-        registros de tareas y documentación de procedimientos.</p>
+      <div class="container">
+        <div class="section-kicker">Capacidades</div>
+        <h2>Conocimientos técnicos</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Sistemas operativos y soporte IT</h3>
+            <ul>
+              <li>Instalación de Windows y Linux.</li>
+              <li>Instalación de programas y configuración inicial.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Redes informáticas</h3>
+            <ul>
+              <li>Fundamentos de redes informáticas.</li>
+              <li>Conceptos básicos de direccionamiento IP.</li>
+              <li>Prácticas iniciales de simulación de redes con Cisco Packet Tracer.</li>
+              <li>Uso de comandos básicos de diagnóstico de conectividad.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Herramientas informáticas</h3>
+            <ul>
+              <li>Microsoft Office.</li>
+              <li>Google Drive.</li>
+              <li>Cisco Packet Tracer para prácticas de simulación.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Documentación y gestión técnica</h3>
+            <ul>
+              <li>Elaboración de manuales y procedimientos técnicos.</li>
+              <li>Organización y digitalización de información.</li>
+              <li>Inventarios y seguimiento de equipos.</li>
+              <li>Elaboración de registros y cronogramas de tareas.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="note" style="margin-top:16px">Los conocimientos se presentan de acuerdo con la experiencia y formación actuales. Las herramientas que todavía están en aprendizaje se incorporarán cuando existan prácticas que permitan demostrarlas.</p>
       </div>
     </section>
 
     <section id="formacion">
-      <h2>Formación y certificaciones</h2>
-
-      <div class="card">
-        <h3>Cisco Networking Academy</h3>
-        <p>Conceptos Básicos de Redes</p>
-        <p>Estado: Completado.</p>
-        <a href="#" target="_blank">Ver insignia o certificado</a>
-      </div>
-
-      <div class="card">
-        <h3>Cisco Networking Academy</h3>
-        <p>Dispositivos de Red y Configuración Inicial</p>
-        <p>Estado: En curso.</p>
-      </div>
-
-      <div class="card">
-        <h3>Licenciatura en Ciberdefensa – UNDEF</h3>
-        <p>Preparación académica de ingreso.</p>
+      <div class="container">
+        <div class="section-kicker">Estudios y actualización</div>
+        <h2>Formación académica y certificaciones</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Formación académica</h3>
+            <p><strong>Bachiller bilingüe con orientación en Informática</strong><br>Liceo Penitenciario Dr. Antonio Bermejo · 1998–2002</p>
+            <p><strong>Ingeniería Mecatrónica</strong><br>Universidad Nacional de Lomas de Zamora · Estudios cursados, sin título.</p>
+          </article>
+          <article class="card">
+            <h3>Cisco Networking Academy</h3>
+            <ul>
+              <li>Introducción a la Ciberseguridad — completado.</li>
+              <li>Conceptos Básicos de Redes — completado.</li>
+              <li>Introducción a Cisco Packet Tracer — completado.</li>
+              <li>Dispositivos de Red y Configuración Inicial — en curso.</li>
+            </ul>
+            <span class="status progress">Programa Analista Junior en Ciberseguridad: en formación</span>
+          </article>
+          <article class="card">
+            <h3>Universidad Tecnológica Nacional — Buenos Aires</h3>
+            <p>Electrónica básica y reparación de plaquetas.</p>
+            <span class="status done">Curso aprobado · 48 horas · 2023</span>
+          </article>
+          <article class="card">
+            <h3>Santander Open Academy</h3>
+            <ul>
+              <li>Fundamentos de Python — 8 horas · 2026.</li>
+              <li>Introducción a la Ciencia de Datos — 6 horas · 2026.</li>
+              <li>Gestión Efectiva de Proyectos y Equipos — 8 horas · 2026.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Instituto Nacional de la Administración Pública (INAP)</h3>
+            <p>Formación complementaria en elaboración de informes, herramientas digitales, ciencia de datos, gestión del tiempo, comunicación, trabajo en equipo, ambiente, seguridad e higiene, entre otras capacitaciones.</p>
+            <span class="status done">11 certificados identificados</span>
+          </article>
+          <article class="card">
+            <h3>Otras formaciones</h3>
+            <ul>
+              <li>Capacitar — Introducción a las Habilidades Blandas.</li>
+              <li>LinkedIn Learning — Qué es la IA generativa.</li>
+              <li>AWS — Introducción a la Inteligencia Artificial Generativa.</li>
+              <li>Operador Táctico — Grupo Especial G.E.R.I.</li>
+              <li>Manejo de equipos de detección por rayos X.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="note" style="margin-top:16px">Los enlaces individuales a certificados e insignias se incorporarán cuando terminemos de ordenar y alojar los archivos verificables. No se publican enlaces ficticios.</p>
       </div>
     </section>
 
-    <section id="practicas">
-      <h2>Prácticas y proyectos</h2>
-
-      <div class="card">
-        <h3>Prácticas de soporte técnico</h3>
-        <p>Espacio destinado a documentar instalaciones,
-        diagnósticos y resolución de problemas informáticos.</p>
-        <p>Estado: En desarrollo.</p>
-      </div>
-
-      <div class="card">
-        <h3>Laboratorios de redes</h3>
-        <p>Espacio para registrar ejercicios de Cisco Packet Tracer,
-        análisis con Wireshark y pruebas de conectividad.</p>
-        <p>Estado: En desarrollo.</p>
+    <section id="proyectos">
+      <div class="container">
+        <div class="section-kicker">Desarrollo e investigación</div>
+        <h2>Proyectos</h2>
+        <div class="grid">
+          <article class="card project-card">
+            <div class="project-number">PROYECTO 01</div>
+            <h3>Refugios modulares para perros</h3>
+            <p>Investigación orientada al aprovechamiento de residuos plásticos, especialmente HDPE (#2), para desarrollar bloques o módulos ensamblables destinados a la construcción de refugios para perros.</p>
+            <p>Se estudian alternativas de clasificación, preparación, moldeo, diseño modular, resistencia y costos. Se prioriza evaluar métodos de moldeo frente a la extrusión de filamento.</p>
+            <div class="bottom"><span class="status progress">Investigación de viabilidad</span></div>
+          </article>
+          <article class="card project-card">
+            <div class="project-number">PROYECTO 02</div>
+            <h3>EZEIZA PULSO</h3>
+            <p><strong>Sistema de Gestión del Bienestar.</strong> Propuesta de desarrollo de un sistema accesible para brindar información general sobre bienestar y promover hábitos saludables, inicialmente mediante un prototipo de software.</p>
+            <p>Se contempla una posible integración futura en un tótem de consulta pública y, en etapas posteriores, componentes físicos.</p>
+            <div class="bottom"><span class="status progress">Concepto de MVP · No construido ni validado</span></div>
+          </article>
+          <article class="card project-card">
+            <div class="project-number">PROYECTO 03</div>
+            <h3>Simulador de Situaciones Operativas</h3>
+            <p>Concepto de plataforma de entrenamiento que permita generar y adaptar situaciones mediante inteligencia artificial según la institución, el entorno, la función y el perfil del participante.</p>
+            <p>El usuario analizaría escenarios, tomaría decisiones y observaría consecuencias simuladas, con evaluación y devolución. La realidad virtual se contempla como una etapa futura de inmersión.</p>
+            <div class="bottom"><span class="status">Proyecto conceptual · Futuro / Inactivo</span></div>
+          </article>
+          <article class="card project-card">
+            <div class="project-number">PROYECTO 04</div>
+            <h3>CRAVING-01 — Asistente de registro e intervención</h3>
+            <p>Proyecto experimental no invasivo para registrar episodios de craving, recopilar datos de sensores y movimiento, y explorar una intervención breve mediante respiración guiada y vibración.</p>
+            <p>La arquitectura conceptual contempla ESP32-C3, MAX30102, MPU6050, sensor GSR/EDA, botón, LED RGB y vibrador. El registro de episodios y la comparación antes/después forman parte del mismo proyecto.</p>
+            <div class="bottom"><span class="status progress">Experimental · Integración y validación pendientes</span></div>
+          </article>
+        </div>
+        <p class="note" style="margin-top:16px">Los estados describen el avance real de cada iniciativa. Los conceptos y diseños preliminares no se presentan como productos terminados ni validados.</p>
       </div>
     </section>
 
-    <section id="idiomas">
-      <h2>Idiomas</h2>
-      <div class="card">
-        <h3>Inglés</h3>
-        <p>Nivel básico: lectura y comprensión de instrucciones
-        técnicas sencillas y vocabulario informático.</p>
+    <section id="casos">
+      <div class="container">
+        <div class="section-kicker">Experiencia aplicada</div>
+        <h2>Casos técnicos</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Relevamiento y mejora de conexiones telefónicas</h3>
+            <p>Inspección de puntos de conexión, revisión del cableado y pruebas de continuidad para identificar deficiencias. Elaboración de una propuesta de reemplazo y organización mediante regletas de 10 pares, con procedimiento y listado de materiales.</p>
+          </article>
+          <article class="card">
+            <h3>Manual técnico de sistemas electrónicos y comunicaciones</h3>
+            <p>Elaboración y organización de material de apoyo para tareas de mantenimiento y diagnóstico, con funciones, herramientas, procedimientos, relevamientos y resolución de fallas.</p>
+          </article>
+          <article class="card">
+            <h3>Digitalización y organización de procesos</h3>
+            <p>Organización de información operativa y creación de documentación compartida para registrar tareas diarias y facilitar el seguimiento entre guardias.</p>
+          </article>
+          <article class="card">
+            <h3>Propuesta de mejora de observación perimetral</h3>
+            <p>Identificación de una dificultad de visibilidad nocturna y elaboración de una propuesta conceptual para reutilizar cámaras y monitores existentes con capacidad de visión nocturna.</p>
+            <span class="status">Propuesta no implementada</span>
+          </article>
+        </div>
+        <p class="note" style="margin-top:16px">Los casos se describen de forma general y no incluyen información interna, sensible ni detalles operativos de organismos o instalaciones.</p>
       </div>
     </section>
 
-    <section id="contacto" class="contact">
-      <h2>Contacto y perfiles profesionales</h2>
-      <p>Correo: agregar correo de contacto</p>
-      <p>LinkedIn: <a href="#" target="_blank">Agregar perfil</a></p>
-      <p>GitHub: <a href="https://github.com/ematal210685-creator" target="_blank">Mi cuenta de GitHub</a></p>
+    <section id="contacto">
+      <div class="container">
+        <div class="section-kicker">Contacto</div>
+        <h2>Conectemos</h2>
+        <div class="two-col">
+          <div>
+            <p class="lead">Emanuel Francisco Villagra</p>
+            <p>SER@PHANDEV — Desarrollo tecnológico</p>
+            <p>Ezeiza, Buenos Aires, Argentina.</p>
+            <p>Orientación profesional: soporte IT, redes, infraestructura y tecnología.</p>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item"><strong>Correo</strong><br><a href="mailto:ematal210685@gmail.com">ematal210685@gmail.com</a></div>
+            <div class="contact-item"><strong>GitHub</strong><br><a href="https://github.com/ematal210685-creator" target="_blank" rel="noopener">github.com/ematal210685-creator</a></div>
+            <div class="contact-item"><strong>LinkedIn</strong><br><span class="note">Enlace pendiente de incorporar.</span></div>
+          </div>
+        </div>
+      </div>
     </section>
-
   </main>
 
   <footer>
-    Portfolio profesional · Buenos Aires, Argentina
+    <div class="container">SER@PHANDEV · Portfolio profesional · Emanuel Francisco Villagra</div>
   </footer>
-
 </body>
 </html>
+
