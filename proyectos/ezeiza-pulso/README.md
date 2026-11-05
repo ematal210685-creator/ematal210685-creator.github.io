@@ -96,6 +96,34 @@ En esta etapa existe una idea de proyecto, una definición preliminar de alcance
 
 El siguiente paso concreto es convertir esta propuesta en requisitos funcionales y diseñar las primeras pantallas del prototipo.
 
+## 9. Roadmap del proyecto
+
+El roadmap organiza el trabajo en fases secuenciales. No asigna fechas ni promete una fecha de lanzamiento: cada fase se considera terminada cuando se obtiene y revisa el entregable indicado. Si las pruebas muestran problemas, se vuelve a la fase correspondiente para corregirlos.
+
+| Fase | Objetivo | Actividades principales | Entregable / condición para avanzar | Estado |
+|---|---|---|---|---|
+| 0. Idea y encuadre | Definir qué problema se quiere explorar y qué no hará el sistema | Describir la necesidad como hipótesis, público inicial, propósito y límites | Documento de propuesta y alcance inicial | En curso |
+| 1. Requisitos del MVP | Convertir la propuesta en funciones concretas | Definir perfiles de usuario, recorrido, datos de entrada, resultados, mensajes, reglas y requisitos de privacidad/accesibilidad | Lista priorizada de requisitos y criterios de aceptación | Pendiente |
+| 2. Diseño de experiencia | Definir cómo se utiliza el sistema antes de programarlo | Dibujar pantallas, navegación, textos, estados de error y versión para pantalla táctil | Prototipo visual navegable o conjunto de pantallas revisado | Pendiente |
+| 3. Construcción del software | Implementar la primera versión local | Desarrollar interfaz, validaciones, cálculos autorizados para el alcance y contenido informativo | MVP ejecutable con versión identificada | Pendiente |
+| 4. Verificación técnica | Comprobar que el software hace lo que se especificó | Probar cálculos con casos de referencia, datos inválidos, límites, navegación y estabilidad | Registro de pruebas, defectos y correcciones | Pendiente |
+| 5. Evaluación de usabilidad | Comprobar si las personas entienden y pueden completar las tareas | Preparar protocolo, realizar pruebas controladas con participantes y recoger observaciones | Informe de resultados de uso, dificultades y mejoras | Pendiente |
+| 6. Ajustes y evaluación del MVP | Decidir si el prototipo cumple los criterios definidos | Priorizar correcciones, repetir pruebas y comparar resultados con criterios previos | Versión revisada e informe de evaluación; decisión de continuar, ajustar o detener | Pendiente |
+| 7. Estudio de viabilidad del tótem | Evaluar si tiene sentido pasar del software a un equipo físico | Analizar fabricación propia frente a compra, componentes, pantalla, gabinete, energía, conectividad, mantenimiento, seguridad, privacidad, costos y posibles autorizaciones | Estudio de viabilidad técnica y económica; no implica aprobación ni fabricación | Futuro, sujeto a validación del MVP |
+| 8. Piloto físico eventual | Comprobar el funcionamiento en un entorno real autorizado | Solo si las fases anteriores lo justifican: construir o adquirir una unidad, definir soporte y mantenimiento y realizar un piloto autorizado | Informe del piloto y decisión fundamentada sobre continuidad | No iniciado |
+
+### Hitos de decisión
+
+- **Hito A — Alcance aprobado por el responsable del proyecto:** no comenzar a programar hasta tener claros los requisitos y límites del MVP.
+- **Hito B — Diseño revisado:** no avanzar a la construcción hasta que el recorrido y los mensajes sean coherentes y comprensibles.
+- **Hito C — Verificación técnica superada:** no probar con usuarios si existen errores críticos de cálculo, validación o funcionamiento.
+- **Hito D — Evaluación de uso documentada:** decidir ajustes a partir de observaciones y datos, no de suposiciones.
+- **Hito E — Viabilidad física:** estudiar el tótem únicamente si el software demuestra utilidad suficiente y existen condiciones técnicas, económicas, institucionales y de autorización.
+
+### Cómo actualizar el roadmap
+
+El estado de cada fase se actualizará únicamente cuando exista evidencia del trabajo realizado. Se utilizarán estos estados: **Pendiente**, **En curso**, **En revisión**, **Completado** o **Bloqueado**. Cada fase completada deberá enlazar o identificar su entregable (requisitos, diseño, versión, registro de pruebas o informe). Las fechas se incorporarán cuando exista una planificación realista.
+
 ## 8. Principio de trabajo
 
 EZEIZA PULSO se desarrollará por etapas: definir, construir, probar, medir, documentar y corregir. Cada avance se presentará según su estado real, diferenciando ideas, diseños, funcionalidades implementadas y resultados comprobados.
