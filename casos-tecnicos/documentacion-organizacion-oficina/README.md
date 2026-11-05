@@ -1,94 +1,62 @@
 # Caso técnico: documentación y organización de una oficina técnica
 
-**Tipo de experiencia:** documentación técnica, organización de información y mejora de procesos.  
-**Contexto:** experiencia desarrollada en una oficina técnica de sistemas electrónicos y comunicaciones.  
-**Presentación pública:** descripción resumida y ejemplos demostrativos. No es el manual institucional original.
+**Tipo de experiencia:** documentación técnica, organización de información y seguimiento de tareas.  
+**Contexto:** trabajo desarrollado en una oficina técnica de sistemas electrónicos y comunicaciones.  
+**Estado:** experiencia realizada. Esta página es una presentación pública resumida y anonimizada.
 
-> Este material se preparó para mostrar competencias profesionales. No reproduce el manual interno ni publica datos, procedimientos operativos, configuraciones, numeraciones, dependencias, credenciales, planos o información institucional sensible.
+> **Confidencialidad:** se presenta la experiencia y el tipo de trabajo realizado, no el manual institucional original. Se omiten datos, configuraciones, numeraciones, dependencias, procedimientos operativos y cualquier otra información interna.
 
-## 1. Necesidad identificada
+## 1. Necesidad
 
-En una oficina técnica se necesita que la información de trabajo esté ordenada y sea fácil de consultar. Cuando los conocimientos, procedimientos, herramientas y antecedentes quedan dispersos o dependen únicamente de la memoria de una persona, se dificulta la continuidad de las tareas, la incorporación de personal y el seguimiento de problemas.
+La información técnica y operativa de una oficina necesita estar organizada y disponible para consulta. Cuando los conocimientos, las funciones, los recursos y los antecedentes de trabajo quedan dispersos, se dificulta encontrar información y dar continuidad a las tareas entre distintos turnos.
 
-## 2. Trabajo realizado
+## 2. Trabajo realizado: elaboración de material técnico
 
-Se elaboró y organizó material de apoyo técnico para reunir información que pudiera servir como referencia en tareas habituales. El trabajo incluyó:
+Se elaboró y organizó un manual de apoyo para reunir información de consulta de la oficina. El trabajo comprendió:
 
-- Organización de la información general de la oficina y sus áreas de trabajo.
-- Descripción de funciones y responsabilidades de manera ordenada.
-- Reunión de conocimientos básicos, herramientas y materiales de uso habitual.
-- Organización de procedimientos de consulta para tareas de mantenimiento.
-- Preparación de material de referencia para identificar componentes y orientar el diagnóstico.
-- Estructuración del contenido mediante índice y secciones para facilitar la búsqueda.
+- Ordenar la información general y las áreas de trabajo.
+- Organizar las funciones y responsabilidades.
+- Reunir conocimientos técnicos básicos y referencias sobre herramientas y materiales.
+- Estructurar contenidos de consulta vinculados con tareas de mantenimiento.
+- Ordenar el material mediante un índice y secciones para facilitar su búsqueda.
 
-El manual original también contiene información específica de sistemas y procedimientos institucionales. Esa parte no se reproduce en esta publicación.
+El manual completo existe como material de trabajo, pero no se publica porque contiene información institucional que debe permanecer reservada.
 
-## 3. Organización de la información
+## 3. Trabajo realizado: organización y registro de tareas
 
-Para mostrar el criterio documental sin exponer contenido interno, se presenta una estructura general:
+También se digitalizó y organizó información para registrar actividades y facilitar el seguimiento entre turnos o guardias.
 
-| Bloque documental | Propósito |
-|---|---|
-| Presentación y alcance | Explicar para qué sirve el documento y a quién está dirigido |
-| Organización del área | Identificar funciones y responsabilidades generales |
-| Conocimientos y herramientas | Reunir referencias de formación, herramientas y materiales |
-| Procedimientos de trabajo | Ordenar instrucciones de consulta y mantenimiento autorizadas |
-| Registro de intervenciones | Dejar constancia de tareas, observaciones y estado |
-| Anexos y referencias | Mantener material complementario organizado |
+El objetivo del registro es que la persona que continúa una tarea pueda reconocer su situación y saber qué quedó pendiente. Para ello, la información se organiza alrededor de datos generales como:
 
-## 4. Organización y seguimiento de tareas
-
-Además del manual, se trabajó en la digitalización y organización de información para facilitar el seguimiento de actividades entre turnos o guardias.
-
-Un registro de seguimiento bien diseñado debería permitir identificar, como mínimo:
-
-- Fecha o período de la intervención.
-- Identificador interno no sensible de la tarea.
-- Descripción general del pedido o problema.
-- Estado: pendiente, en proceso, resuelto o derivado.
+- Fecha y descripción de la tarea.
+- Estado de seguimiento.
 - Acción realizada y resultado observado.
-- Materiales o recursos requeridos, cuando corresponda.
-- Próximo paso y responsable de continuidad, según las reglas del área.
+- Pendientes y próximo paso.
 
-### Ejemplo demostrativo — datos ficticios
+La descripción anterior resume el propósito y el criterio de organización. No se exponen registros internos ni datos reales de equipos o instalaciones.
 
-| Fecha | Tarea | Estado | Acción / resultado | Continuidad |
-|---|---|---|---|---|
-| 05/11/2026 | Verificación de equipo de comunicaciones (ejemplo) | En proceso | Se registra la observación y se deriva para revisión | Pendiente de evaluación |
+## 4. Criterios de organización aplicados
 
-Este ejemplo es ilustrativo y no corresponde a un registro real ni contiene datos de una instalación.
+- **Claridad:** información presentada con títulos y descripciones comprensibles.
+- **Orden:** contenidos separados por temas y funciones.
+- **Consulta:** índice y secciones que facilitan localizar información.
+- **Continuidad:** registro de actividades para facilitar el traspaso entre turnos.
+- **Seguimiento:** identificación de tareas realizadas y pendientes.
+- **Confidencialidad:** exclusión de información institucional de la muestra pública.
 
-## 5. Criterios aplicados
+## 5. Competencias demostradas
 
-- **Claridad:** usar títulos y descripciones comprensibles.
-- **Orden:** separar la información por temas y funciones.
-- **Trazabilidad:** registrar qué se hizo y qué queda pendiente.
-- **Continuidad:** facilitar que otra persona pueda retomar una tarea.
-- **Actualización:** revisar la documentación cuando cambian los procesos.
-- **Confidencialidad:** limitar el acceso y evitar difundir datos internos.
-
-## 6. Competencias que demuestra
-
-Este trabajo permite mostrar experiencia práctica en:
+Esta experiencia permite mostrar práctica en:
 
 - Elaboración y estructuración de documentación técnica.
 - Organización y digitalización de información.
-- Estandarización de registros y procedimientos.
-- Seguimiento de tareas y continuidad operativa.
-- Identificación de necesidades de información.
-- Comunicación técnica y preparación de material de consulta.
+- Preparación de material de consulta.
+- Organización de registros y seguimiento de tareas.
+- Comunicación técnica y transmisión de información entre turnos.
+- Identificación de necesidades de documentación en un entorno de trabajo.
 
-## 7. Evidencias que podrían incorporarse
+## 6. Alcance de esta publicación
 
-Para ampliar este caso sin publicar información interna, se pueden agregar:
+Esta página describe tareas efectivamente realizadas y resume su finalidad. No es una reproducción del manual original ni una demostración de sistemas institucionales. El ejemplo público se limita a explicar el trabajo y las competencias involucradas, preservando la confidencialidad del ámbito donde se desarrolló.
 
-1. Una portada recreada y genérica del manual, sin logos ni identificadores institucionales.
-2. Un índice de ejemplo, redactado nuevamente y sin apartados operativos sensibles.
-3. Una plantilla vacía de registro diario, creada para el portfolio.
-4. Un diagrama genérico del flujo de registro, seguimiento y cierre de tareas.
-
-No se adjuntará el manual original ni capturas de sistemas institucionales. Cualquier evidencia adicional deberá revisarse y anonimizarse antes de publicarse.
-
-## Estado
-
-**Experiencia realizada; muestra pública resumida y anonimizada.** La publicación no representa una autorización institucional ni implica que el organismo haya aprobado o adoptado este material.
+**Experiencia realizada.** La publicación es una muestra profesional individual y no implica que el organismo haya aprobado o adoptado este material.
