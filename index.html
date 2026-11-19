@@ -133,7 +133,15 @@
           <div class="actions">
             <a class="button primary" href="#proyectos">Ver proyectos</a>
             <a class="button" href="https://github.com/ematal210685-creator" target="_blank" rel="noopener">Mi GitHub</a>
-            <a class="button" href="CV_Emanuel_Villagra_IT_editable(1).pdf" target="_blank" rel="noopener">Descargar CV</a>
+            <div class="cv-download" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+              <label for="cvSelector" class="note" style="margin:0">Elegir CV:</label>
+              <select id="cvSelector" aria-label="Seleccionar tipo de currículum" style="background:#111c2e;color:#e8eef7;border:1px solid #47718f;border-radius:8px;padding:10px;min-width:180px">
+                <option value="">Seleccioná una versión</option>
+                <option value="CV_Tecnico_General.pdf">CV Técnico General</option>
+                <option value="CV_Soporte_IT.pdf">CV Soporte IT</option>
+              </select>
+              <a class="button primary" id="downloadCvButton" href="#" aria-disabled="true" onclick="if(this.getAttribute('aria-disabled')==='true'){event.preventDefault();return;}">Descargar CV</a>
+            </div>
             <a class="button" href="mailto:ematal210685@gmail.com">Contactarme</a>
           </div>
         </div>
@@ -419,6 +427,24 @@
       </div>
     </section>
   </main>
+
+
+  <script>
+    const cvSelector = document.getElementById('cvSelector');
+    const downloadCvButton = document.getElementById('downloadCvButton');
+    cvSelector.addEventListener('change', function () {
+      const selectedCv = this.value;
+      if (selectedCv) {
+        downloadCvButton.href = selectedCv;
+        downloadCvButton.setAttribute('download', selectedCv);
+        downloadCvButton.setAttribute('aria-disabled', 'false');
+      } else {
+        downloadCvButton.href = '#';
+        downloadCvButton.removeAttribute('download');
+        downloadCvButton.setAttribute('aria-disabled', 'true');
+      }
+    });
+  </script>
 
   <footer>
     <div class="container">SER@PHANDEV · Portfolio profesional · Emanuel Francisco Villagra</div>
