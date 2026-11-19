@@ -1,550 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Proyecto de desarrollo: Sistema de Gestión de Tareas y Novedades de Oficina Técnica.">
+  <meta name="description" content="Proyecto de aplicación local para la gestión de actividades, intervenciones, inventario y partes diarios de una oficina técnica.">
   <meta name="theme-color" content="#0b1220">
-  <title>Sistema de Gestión de Tareas | SER@PHANDEV</title>
-
+  <title>Sistema de Gestión de Oficina Técnica | SER@PHANDEV</title>
   <style>
-    :root {
-      --bg: #0b1220;
-      --surface: #111c2e;
-      --surface-2: #16243a;
-      --text: #e8eef7;
-      --muted: #a8b5c8;
-      --accent: #55bde8;
-      --accent-soft: rgba(85, 189, 232, .12);
-      --line: #26364d;
-      --max: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(11, 18, 32, .96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      color: var(--text);
-      font-weight: 800;
-      letter-spacing: .8px;
-      font-size: 1.08rem;
-    }
-
-    .brand span {
-      color: var(--accent);
-    }
-
-    .back-link {
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    .hero {
-      padding: 75px 0 65px;
-      background:
-        radial-gradient(ellipse at top right,
-        rgba(85,189,232,.10), transparent 55%);
-    }
-
-    .eyebrow,
-    .section-kicker {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .75rem;
-      font-weight: 750;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.15;
-      margin: 14px 0 18px;
-    }
-
-    h2 {
-      font-size: clamp(1.55rem, 3vw, 2rem);
-      margin: 5px 0 22px;
-    }
-
-    h3 {
-      font-size: 1.08rem;
-      margin-bottom: 9px;
-      color: #f2f6fb;
-    }
-
-    p {
-      color: #c3cede;
-      margin-bottom: 14px;
-    }
-
-    .intro {
-      max-width: 850px;
-      font-size: 1.08rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 22px 0;
-    }
-
-    .tag {
-      border: 1px solid #36516c;
-      color: #bfe8f8;
-      background: var(--accent-soft);
-      border-radius: 999px;
-      padding: 5px 12px;
-      font-size: .82rem;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 17px;
-      border-radius: 8px;
-      border: 1px solid #47718f;
-      color: var(--text);
-      font-weight: 600;
-      margin: 8px 8px 0 0;
-    }
-
-    .button.primary {
-      background: #173b54;
-      border-color: #397da2;
-    }
-
-    .button:hover {
-      background: #1b3048;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 55px 0;
-      border-top: 1px solid rgba(38,54,77,.72);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .card {
-      background: linear-gradient(145deg, var(--surface), #101a2b);
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      padding: 22px;
-      min-width: 0;
-    }
-
-    .icon {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-      color: #c3cede;
-    }
-
-    li {
-      margin: 6px 0;
-    }
-
-    .status {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 4px 11px;
-      border-radius: 999px;
-      font-size: .78rem;
-      border: 1px solid #826b3e;
-      color: #e8d3a1;
-    }
-
-    /* GALERÍA DE CAPTURAS */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    .capture-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      padding: 15px;
-      overflow: hidden;
-    }
-
-    .capture-card h3 {
-      margin: 4px 0 12px;
-    }
-
-    .capture-placeholder {
-      min-height: 260px;
-      border: 2px dashed #36516c;
-      border-radius: 9px;
-      background: #0d1727;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 25px;
-      color: var(--muted);
-    }
-
-    .capture-placeholder .icon {
-      font-size: 2.5rem;
-      color: var(--accent);
-    }
-
-    .capture-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-    }
-
-    .note {
-      font-size: .88rem;
-      color: #91a2b8;
-      margin-top: 18px;
-    }
-
-    .notice {
-      background: var(--accent-soft);
-      border: 1px solid #36516c;
-      border-radius: 10px;
-      padding: 18px;
-      margin-top: 20px;
-    }
-
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      color: #8796aa;
-      font-size: .85rem;
-      text-align: center;
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 0;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 55px 0;
-      }
-
-      section {
-        padding: 42px 0;
-      }
-    }
+    :root{--bg:#0b1220;--surface:#111c2e;--surface2:#16243a;--text:#e8eef7;--muted:#a8b5c8;--accent:#55bde8;--soft:rgba(85,189,232,.12);--line:#26364d;--max:1120px}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}
+    body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:5;background:rgba(11,18,32,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{color:var(--text);font-weight:800;letter-spacing:.8px}.brand span{color:var(--accent)}
+    .hero{padding:72px 0 58px;background:radial-gradient(ellipse at top right,rgba(85,189,232,.1),transparent 55%)}
+    .eyebrow,.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:750}
+    h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.15;margin:14px 0 18px}
+    h2{font-size:clamp(1.55rem,3vw,2rem);margin:5px 0 22px}h3{font-size:1.08rem;margin-bottom:9px;color:#f2f6fb}
+    p{color:#c3cede;margin:0 0 14px}.intro{max-width:850px;font-size:1.08rem}
+    .tags,.actions{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}
+    .tag{border:1px solid #36516c;color:#bfe8f8;background:var(--soft);border-radius:999px;padding:5px 12px;font-size:.82rem}
+    .button{display:inline-block;padding:9px 15px;border-radius:8px;border:1px solid #47718f;color:var(--text);font-weight:600}
+    .button.primary{background:#173b54;border-color:#397da2}
+    section{padding:52px 0;border-top:1px solid rgba(38,54,77,.72)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .card{background:linear-gradient(145deg,var(--surface),#101a2b);border:1px solid var(--line);border-radius:13px;padding:22px;min-width:0}
+    ul{padding-left:20px;color:#c3cede}li{margin:6px 0}
+    .status{display:inline-block;margin-top:12px;padding:4px 11px;border-radius:999px;font-size:.78rem;border:1px solid #826b3e;color:#e8d3a1}
+    .notice{background:var(--soft);border:1px solid #36516c;border-radius:10px;padding:18px;margin-top:20px}
+    .note{font-size:.88rem;color:#91a2b8}
+    footer{padding:28px 0;border-top:1px solid var(--line);color:#8796aa;font-size:.85rem;text-align:center}
+    @media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0}.grid{grid-template-columns:1fr}.hero{padding:52px 0}section{padding:40px 0}}
   </style>
 </head>
-
 <body>
-
-<header>
-  <div class="container nav">
-    <a class="brand" href="../index.html">
-      SER<span>@</span>PHANDEV
-    </a>
-
-    <a class="back-link" href="../index.html#proyectos">
-      ← Volver al portfolio
-    </a>
-  </div>
-</header>
-
+<header><div class="container nav">
+  <a class="brand" href="../index.html">SER<span>@</span>PHANDEV</a>
+  <a href="../index.html#proyectos">← Volver al portfolio</a>
+</div></header>
 <main>
+  <section class="hero" style="border-top:0"><div class="container">
+    <div class="eyebrow">Proyecto 05 · Desarrollo de software</div>
+    <h1>Sistema de Gestión de Oficina Técnica</h1>
+    <p class="intro">Aplicación web local creada para reunir en un solo lugar el registro de actividades, intervenciones, pendientes e información de infraestructura. Busca facilitar las consultas y mantener la continuidad del trabajo entre los integrantes de una oficina técnica.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">HTML y CSS</span><span class="tag">Gestión de información</span><span class="tag">Exportación a Excel</span></div>
+    <span class="status">Prototipo funcional local · Mejoras en curso</span>
+    <div class="actions"><a class="button primary" href="#funciones">Ver funcionalidades</a><a class="button" href="#tecnologias">Tecnologías utilizadas</a></div>
+  </div></section>
 
-  <!-- PRESENTACIÓN -->
+  <section><div class="container">
+    <div class="kicker">01 · Necesidad detectada</div><h2>¿Qué problema busca resolver?</h2>
+    <p class="intro">La información de una oficina técnica puede quedar distribuida entre planillas, documentos y registros separados. El proyecto nació de la necesidad de centralizar las tareas diarias, las intervenciones realizadas, los asuntos pendientes y los datos de infraestructura para poder consultarlos con mayor facilidad.</p>
+    <p>La aplicación se diseñó como una herramienta de uso local, en un equipo dedicado, con una base de datos almacenada en ese mismo entorno.</p>
+  </div></section>
 
-  <section class="hero" style="border-top:0">
-    <div class="container">
-
-      <div class="eyebrow">
-        Proyecto 05 · Desarrollo de software
-      </div>
-
-      <h1>
-        Sistema de Gestión de Tareas y Novedades
-      </h1>
-
-      <p class="intro">
-        Aplicación web orientada a organizar tareas, novedades y
-        pendientes de una oficina técnica, facilitando el seguimiento
-        de actividades y la continuidad de la información entre relevos.
-      </p>
-
-      <div class="tags">
-        <span class="tag">Gestión de tareas</span>
-        <span class="tag">Seguimiento</span>
-        <span class="tag">Organización</span>
-        <span class="tag">Desarrollo web</span>
-      </div>
-
-      <span class="status">● Proyecto en desarrollo</span>
-
-      <div style="margin-top:28px">
-        <a class="button primary" href="#capturas">
-          Ver aplicación
-        </a>
-
-        <a class="button" href="#funciones">
-          Conocer funcionalidades
-        </a>
-      </div>
-
+  <section id="funciones"><div class="container">
+    <div class="kicker">02 · Funcionalidades</div><h2>Qué permite hacer</h2>
+    <div class="grid">
+      <article class="card"><h3>Registro de actividades</h3><p>Cargar varias tareas por día, consultar registros y organizar la información por fecha y sector.</p></article>
+      <article class="card"><h3>Intervenciones y pendientes</h3><p>Dejar asentadas las intervenciones realizadas y mantener visibles los asuntos que todavía requieren seguimiento.</p></article>
+      <article class="card"><h3>Inventario e infraestructura</h3><p>Registrar líneas telefónicas y datos técnicos asociados, como bloque, gateway, equipo, puerto, tablero y par de red.</p></article>
+      <article class="card"><h3>Historial de información</h3><p>Conservar referencias de cambios y ubicaciones de líneas para facilitar la consulta de antecedentes.</p></article>
+      <article class="card"><h3>Usuarios y permisos</h3><p>Acceso mediante usuarios y contraseñas, con permisos según el perfil y registro de operaciones relevantes.</p></article>
+      <article class="card"><h3>Parte diario</h3><p>Preparar un informe de las actividades para facilitar el traspaso de información entre relevos.</p></article>
+      <article class="card"><h3>Exportación a Excel</h3><p>Generar un archivo Excel con hojas separadas para actividades, intervenciones y pendientes.</p></article>
+      <article class="card"><h3>Uso local</h3><p>La aplicación se ejecuta en la computadora donde está instalada y guarda la información en una base de datos local.</p></article>
     </div>
-  </section>
+  </div></section>
 
-  <!-- OBJETIVO -->
-
-  <section>
-    <div class="container">
-
-      <div class="section-kicker">01 · Objetivo</div>
-      <h2>¿Qué busca resolver?</h2>
-
-      <p class="intro">
-        El proyecto surge de la necesidad de contar con una herramienta
-        sencilla que permita registrar y consultar tareas pendientes,
-        novedades y actividades de una oficina técnica.
-      </p>
-
-      <p>
-        La propuesta busca mejorar la organización de la información,
-        facilitar el seguimiento de cada tarea y evitar que los asuntos
-        pendientes pierdan continuidad cuando se produce un cambio de relevo.
-      </p>
-
+  <section id="tecnologias"><div class="container">
+    <div class="kicker">03 · Herramientas</div><h2>Tecnologías explicadas</h2>
+    <div class="grid">
+      <article class="card"><h3>Python</h3><p>Lenguaje de programación utilizado para desarrollar la lógica de la aplicación: registrar datos, procesar información y ejecutar las funciones del sistema.</p></article>
+      <article class="card"><h3>SQLite</h3><p>Base de datos liviana que guarda los registros en un archivo local, sin necesitar instalar un servidor de base de datos separado.</p></article>
+      <article class="card"><h3>HTML y CSS</h3><p>HTML organiza los elementos que aparecen en pantalla; CSS define su presentación visual, colores, tamaños y distribución.</p></article>
+      <article class="card"><h3>openpyxl</h3><p>Librería de Python utilizada para crear archivos de Excel (.xlsx) con los datos exportados por la aplicación.</p></article>
+      <article class="card"><h3>Seguridad de acceso</h3><p>El sistema incorpora contraseñas almacenadas mediante hash PBKDF2, sesiones de usuario y controles de acceso. Esto aporta medidas básicas de protección, pero no equivale a una auditoría de seguridad independiente.</p></article>
     </div>
-  </section>
+  </div></section>
 
-  <!-- FUNCIONALIDADES -->
+  <section><div class="container">
+    <div class="kicker">04 · Estado real</div><h2>Alcance y aspectos pendientes</h2>
+    <article class="card">
+      <h3>Prototipo funcional</h3>
+      <p>Se desarrolló una aplicación local con registro de información, administración de datos, control de acceso, generación de parte diario y exportación a Excel.</p>
+      <p>La exportación a Excel está implementada. El envío automático mediante Gmail no se considera operativo: durante las pruebas apareció un error de autenticación SMTP. Por ese motivo, el procedimiento previsto es descargar el archivo y enviarlo manualmente como adjunto desde el correo.</p>
+      <span class="status">Prototipo funcional · En evolución</span>
+    </article>
+    <div class="notice"><strong>Privacidad de la demostración</strong><p style="margin:8px 0 0">Esta descripción es general. Una demostración pública debe utilizar datos ficticios y recursos gráficos genéricos. No se publican nombres de usuarios, contraseñas, registros reales, datos de infraestructura ni información interna de la institución.</p></div>
+  </div></section>
 
-  <section id="funciones">
-    <div class="container">
-
-      <div class="section-kicker">02 · Funcionalidades</div>
-      <h2>Características principales</h2>
-
-      <div class="grid">
-
-        <article class="card">
-          <div class="icon">📝</div>
-          <h3>Registro de tareas</h3>
-          <p>
-            Incorporación de tareas y novedades para mantener
-            organizada la información.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">📋</div>
-          <h3>Seguimiento de pendientes</h3>
-          <p>
-            Organización de actividades pendientes y consulta
-            de su evolución.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">👤</div>
-          <h3>Responsables y estados</h3>
-          <p>
-            Identificación de responsables y estados de las tareas
-            para facilitar su seguimiento.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">🔄</div>
-          <h3>Continuidad entre relevos</h3>
-          <p>
-            Consulta de información para facilitar la continuidad
-            de las actividades y novedades.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">🖥️</div>
-          <h3>Interfaz de usuario</h3>
-          <p>
-            Diseño de una interfaz visual con botones, iconos y
-            elementos de navegación.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">⚙️</div>
-          <h3>Personalización</h3>
-          <p>
-            Posibilidad de adaptar la identificación del sistema
-            a distintos entornos de trabajo.
-          </p>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CAPTURAS -->
-
-  <section id="capturas">
-    <div class="container">
-
-      <div class="section-kicker">03 · Interfaz</div>
-      <h2>Vistas de la aplicación</h2>
-
-      <p>
-        A continuación se presentan capturas de pantalla de la
-        aplicación en desarrollo.
-      </p>
-
-      <div class="gallery">
-
-        <article class="capture-card">
-  <h3>01 · Pantalla principal</h3>
-
-  <img src="../imagenes/oficina-tecnica-01.png"
-       alt="Pantalla principal de la aplicación">
-</article>
-
-        <article class="capture-card">
-          <h3>02 · Registro de tareas y novedades</h3>
-
-          <div class="capture-placeholder">
-            <div class="icon">📝</div>
-            <strong>Agregar captura del registro</strong>
-            <p class="note">
-              Aquí se mostrará el formulario de carga de información.
-            </p>
-          </div>
-        </article>
-
-        <article class="capture-card">
-          <h3>03 · Seguimiento de actividades</h3>
-
-         <article class="capture-card">
-  <h3>02 · Registro de tareas y novedades</h3>
-
-  <img src="../imagenes/oficina-tecnica-02.png"
-       alt="Registro de tareas y novedades">
-</article>
-      <p class="note">
-        Las imágenes se incorporarán cuando estén disponibles
-        las capturas definitivas de la aplicación.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- DESARROLLO -->
-
-  <section>
-    <div class="container">
-
-      <div class="section-kicker">04 · Desarrollo</div>
-      <h2>Estado del proyecto</h2>
-
-      <article class="card">
-        <h3>Aplicación en desarrollo</h3>
-
-        <p>
-          El sistema se encuentra en etapa de desarrollo y mejora.
-          Se trabaja sobre la organización de sus funciones, la
-          presentación visual y la experiencia de uso.
-        </p>
-
-        <p>
-          El objetivo es construir una herramienta práctica,
-          sencilla y adaptable a las necesidades de gestión
-          de tareas de una oficina técnica.
-        </p>
-
-        <span class="status">En desarrollo</span>
-      </article>
-
-      <div class="notice">
-        <strong>Versión demostrativa</strong>
-        <p style="margin-top:8px;margin-bottom:0">
-          Esta presentación tiene fines demostrativos. Las capturas
-          públicas deben utilizar datos ficticios y no deben incluir
-          información interna, personal ni operativa.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
+  <section><div class="container">
+    <div class="kicker">05 · Aprendizajes</div><h2>Qué representa este proyecto</h2>
+    <p class="intro">El desarrollo permitió transformar una necesidad concreta de organización del trabajo en una herramienta de software. También implicó practicar programación, almacenamiento de datos, diseño de interfaces, gestión de usuarios, generación de informes y resolución de errores durante las pruebas.</p>
+    <p>El proyecto continúa siendo una aplicación local en evolución; no se presenta como un producto comercial ni como un sistema desplegado para uso general.</p>
+  </div></section>
 </main>
-
-<footer>
-  <div class="container">
-    SER@PHANDEV · Portfolio profesional
-    <br>
-    Proyecto de desarrollo tecnológico · 2026
-  </div>
-</footer>
-
+<footer><div class="container">SER@PHANDEV · Portfolio profesional · Proyecto de desarrollo tecnológico · 2026</div></footer>
 </body>
 </html>
